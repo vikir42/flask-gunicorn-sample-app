@@ -3,13 +3,12 @@ runtime: python311
 build:
   commands:
     build:        
-      - pip3 install pipenv
-      - pipenv install
+      - pip3 install -r requirements.txt
 run:
   runtime-version: 3.11
   pre-run:  
     - pip3 install pipenv
-    - pipenv install
+    - pip3 install gunicorn
   command: pipenv run gunicorn wsgi:app --bind 0.0.0.0:8000
   network: 
     port: 8000
