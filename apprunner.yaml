@@ -10,6 +10,6 @@ run:
   pre-run:  
     - pip3 install pipenv
     - pipenv install
-  command: pipenv run gunicorn run:app --bind 0.0.0.0:8000
+  command: pipenv run gunicorn wsgi:app --bind 0.0.0.0:8000
   network: 
     port: 8000
